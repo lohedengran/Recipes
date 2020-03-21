@@ -1,58 +1,68 @@
 body {
   font-family: "Source Sans Pro", sans-serif;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   margin: 0;
-}
-
-.content {
-  display: flex;
-  justify-content: space-around;
   padding: 20px;
 }
 
-.sidebar {
-  margin: 0;
-  padding: 0;
-  width: 180px;
-  position: fixed;
+.main {
+  display: flex;
+  justify-content: space-around;
+}
+
+.menu {
+  color: #242635;
+}
+
+.sidenav {
   height: 100%;
-  overflow: auto;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #dc9a16;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  text-align: center;
 }
 
-.sidebar a {
-  display: block;
-  color: black;
-  padding: 16px;
+.sidenav a {
+  padding: 8px 8px 8px 32px;
   text-decoration: none;
+  font-size: 25px;
+  color: #ffffff;
+  display: block;
+  transition: 0.3s;
 }
 
-.sidebar a.active {
-  background-color: #c87f2a;
-  color: white;
+.sidenav a:hover {
+  color: #242635;
 }
 
-.sidebar a:hover:not(.active) {
-  background-color: #c87f2a;
-  color: white;
-}
-
-div.content {
-  margin-left: 200px;
-  padding: 1px 16px;
-  height: 1000px;
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
 
 h2 {
   font-family: "Megrim", cursive;
 }
 
-.section2 {
+.test {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-left: 20px;
+}
+
+.middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .text {
@@ -86,38 +96,62 @@ p {
   transform: scale(1.2);
 }
 
-.food {
-  max-width: 576px;
-  max-height: 648px;
-}
-
-@media screen and (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: relative;
+@media screen and (max-width: 950px) {
+  body {
+    height: 120vh;
   }
 
-  .sidebar a {
-    display: flex;
+  .main {
+    flex-wrap: wrap;
+    padding: 20px;
   }
 
-  div.content {
-    margin-left: 0;
+  .menu {
+    font-size: 22px;
+  }
+
+  .test {
+    justify-content: center;
+  }
+
+  .middle {
+    padding: 20px;
   }
 
   h1 {
-    font-size: 70px;
+    font-size: 60px;
   }
 
   p {
     font-size: 18px;
+    line-height: 25px;
+  }
+
+  .text {
+    text-align: center;
+  }
+}
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+
+  .sidenav a {
+    font-size: 18px;
+  }
+
+  .menu {
+    font-size: 18px;
   }
 }
 @media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: center;
-    float: none;
+  h1 {
+    font-size: 50px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 20px;
   }
 }
 

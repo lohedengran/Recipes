@@ -11,23 +11,36 @@
     <title>Recipes</title>
   </head>
   <body>
-    <main class="content">
-      <section class="section1">
-        <div class="sidebar">
-          <a class="active" href="#home"><h2>Head.</h2></a>
-          <a href="#news">Works</a>
-          <a href="#contact">Services</a>
-          <a href="#about">Contacts</a>
+    <main class="main">
+      <div class="test">
+        <div>
+          <nav>
+            <div id="mySidenav" class="sidenav">
+              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+                >&times;</a
+              >
+              <a href="#">Works</a>
+              <a href="#">Services</a>
+              <a href="#">Contacts</a>
+            </div>
+          </nav>
+
+          <span
+            class="menu"
+            style="font-size:30px;cursor:pointer"
+            onclick="openNav()"
+            >&#9776; Menu</span
+          >
         </div>
-      </section>
-      <section class="section2">
-        <div class="text">
-          <div><h1>Recipes</h1></div>
-          <div>
-            <p>
-              Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec.
-              Donec viverra eleifend lacus, vitae ullamcor.
-            </p>
+        <div class="middle">
+          <div class="text">
+            <div><h1>Recipes</h1></div>
+            <div>
+              <p>
+                Fusce vehicula dolor arcu, sit amet blandit dolor mollis nec.
+                Donec viverra eleifend lacus, vitae ullamcor.
+              </p>
+            </div>
           </div>
         </div>
         <div class="arrow">
@@ -35,10 +48,25 @@
             ><img class="arrow-down" src="img/icon.svg" alt="arrow"
           /></a>
         </div>
-      </section>
-      <section class="section3">
-        <img class="food" src="img/food.png" alt="food" />
-      </section>
+      </div>
+      <div class="food">
+        <picture>
+          <source media="(max-width: 400px)" srcset="./img/food-mobile.png" />
+          <source media="(max-width: 768px)" srcset="./img/food-tablet.png" />
+          <source media="(max-width: 1400px)" srcset="./img/food.png" />
+
+          <img class="food" src="img/food.png" alt="food" />
+        </picture>
+      </div>
     </main>
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "100%";
+      }
+
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
   </body>
 </html>
